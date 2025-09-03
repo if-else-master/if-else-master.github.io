@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 7.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/RayBlog/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/RayBlog/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/RayBlog/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/RayBlog/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/RayBlog/css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/RayBlog/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"if-else-master.github.io","root":"/RayBlog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"admin.ifelsemaster.me","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="第九屆海峽兩岸青少年創客大賽     榮獲優勝   📋 前言這個比賽是類似 IEYI 發明展，不同的地方是他要現場做出來。我們這組做的東西是智能電梯，這個電梯的功能是透過影像辨識來偵測電梯內的人數。如果電梯客滿那就不會會應電梯外的請求指令，電梯會優先將電梯艙內的請求完成才會回應電梯外的搭乘請求。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第九屆海峽兩岸青少年創客大賽">
-<meta property="og:url" content="https://if-else-master.github.io/RayBlog/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/index.html">
+<meta property="og:url" content="http://admin.ifelsemaster.me/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
 <meta property="og:description" content="第九屆海峽兩岸青少年創客大賽     榮獲優勝   📋 前言這個比賽是類似 IEYI 發明展，不同的地方是他要現場做出來。我們這組做的東西是智能電梯，這個電梯的功能是透過影像辨識來偵測電梯內的人數。如果電梯客滿那就不會會應電梯外的請求指令，電梯會優先將電梯艙內的請求完成才會回應電梯外的搭乘請求。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://if-else-master.github.io/RayBlog/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg">
-<meta property="og:image" content="https://if-else-master.github.io/RayBlog/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.jpg">
-<meta property="og:image" content="https://if-else-master.github.io/RayBlog/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.jpg">
+<meta property="og:image" content="http://admin.ifelsemaster.me/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg">
+<meta property="og:image" content="http://admin.ifelsemaster.me/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.jpg">
+<meta property="og:image" content="http://admin.ifelsemaster.me/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.jpg">
 <meta property="article:published_time" content="2024-07-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-06-27T16:00:00.000Z">
 <meta property="article:author" content="Ray">
@@ -37,9 +37,9 @@
 <meta property="article:tag" content="國際交流">
 <meta property="article:tag" content="創客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://if-else-master.github.io/RayBlog/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg">
+<meta name="twitter:image" content="http://admin.ifelsemaster.me/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg">
 
-<link rel="canonical" href="https://if-else-master.github.io/RayBlog/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
+<link rel="canonical" href="http://admin.ifelsemaster.me/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
 
 
 <script id="page-configurations">
@@ -101,7 +101,7 @@
 
   <div class="site-meta">
 
-    <a href="/RayBlog/" class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Ray's Blog</h1>
       <span class="logo-line-after"><i></i></span>
@@ -123,22 +123,22 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/RayBlog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/RayBlog/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/RayBlog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/RayBlog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -195,10 +195,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://if-else-master.github.io/RayBlog/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
+    <link itemprop="mainEntityOfPage" href="http://admin.ifelsemaster.me/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/RayBlog/images/RayMe.jpeg">
+      <meta itemprop="image" content="/images/RayMe.jpeg">
       <meta itemprop="name" content="Ray">
       <meta itemprop="description" content="科技源於人性，而低谷終將迎來黎明">
     </span>
@@ -248,14 +248,14 @@
 <h2 id="關於比賽"><a href="#關於比賽" class="headerlink" title="關於比賽"></a>關於比賽</h2><p>自2015年時任海協會會長陳德銘考察Fablab臺北及同濟大學設計創意學院並提出創辦構想後，海峽兩岸青少年創客大賽正式啟動。首屆比賽於2016年舉行，截至2023年，已成功舉辦八屆，吸引了超過3300名青少年參與。</p>
 <p>海峽兩岸青少年創客大賽自2016年首辦以來，這項賽事由海峽兩岸關係協會指導，上海市台辦、同濟大學聯合主辦，同濟大學設計創意學院承辦，旨在通過創客活動促進青少年的交流與互動。</p>
 <p>比賽以「眾智未來」為核心主題，鼓勵參賽者以SDGs為導向，秉持世界公民的視野，關注社會、經濟與環境挑戰。參賽者結合創新設計理念與前沿科技，致力於創造兼具社會價值與產業潛力的作品，展現青年在創意與技術領域的卓越能力</p>
-<p><img src="/RayBlog/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg" alt="圖片介紹"></p>
+<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg" alt="圖片介紹"></p>
 <h2 id="發想過程"><a href="#發想過程" class="headerlink" title="發想過程"></a>發想過程</h2><p>這是一次創客大賽，那我們思來想去還是想不到要做什麼，那這時候我在一段Apple CEO Tim Cook的採訪中聽到這麼一段話，他說：所有的靈感都來自於生活中的”痛點“，人們因為習慣了這些痛點所以沒有去改變，而作為創作者作為科技屆的標竿，蘋果有義務解決這些痛點。這句話讓我開始思考我生活中有什麼痛點，最後真的讓我想到了，我們數位實驗高中的學習基地在四樓和五樓，每天上下課都會有很多人，那電梯在五樓的時候就客滿了，但是電梯還是在四樓就停下來，這如果是在這種六層樓的建築物那可能還好，如果是在那種30層樓的高樓裡，這些等待電梯開關門時間就被浪費了，不只體驗很差，如果我剛好要趕公車，心情就會很煩燥。所以這是我們想要解決的“痛點”。</p>
 <h2 id="準備過程"><a href="#準備過程" class="headerlink" title="準備過程"></a>準備過程</h2><p>這次的創客大賽規定要我們現場做出來，所以這邊的準備過程是先在學校做一次，現場才不會顯得很慌張。我們用Onshape 畫出電梯的外殼，並用雷射切割幾切出來，那在內部硬體方面，我們採用的方式是使用樹莓派5驅動步進馬達來做出電梯上下移動的效果。那至於我們要怎麼判斷電梯內有沒有客滿，我們決定採用影像辨識的方式，我們本來準備使用 YoLo5 nano 但我們發現會導致電梯客滿的元素不只是”人“，還有可能是輪椅、嬰兒車、推車…等，所以我們改用 OpenCV 的顏色辨識功能，我們將電梯艙的地板塗成紅色，讓 OpenCV 偵測看看有沒有紅色地板，如果偵測到紅色地板，代表電梯沒有客滿，如果沒有偵測到紅色地板，代表電梯客滿了。那以上就是我們整個作品的詳細功能以及製作方式。</p>
-<p><img src="/RayBlog/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.jpg" alt="圖片介紹"></p>
+<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.jpg" alt="圖片介紹"></p>
 <h2 id="決賽環節"><a href="#決賽環節" class="headerlink" title="決賽環節"></a>決賽環節</h2><p>我們 7&#x2F;11 去到上海，第一天我們就深感不秒，我們住的那間酒店的電梯就有相關的功能，在我們搭電梯下樓的時候，我們發現當電梯滿載的時候，電梯是不會停其他樓層的，電梯外的顯示器上會寫該電梯滿載中。那因為距離比賽還有一天半，我們緊急討論 PlanB，最後我們決定增加一個緊急醫療功能，這個功能是在電梯艙內增加一顆按鈕，當有人在高樓層昏倒需要送醫的時候，患者的家屬可以將患者抬進電梯並按下該按鈕，這時候電梯會忽視其他樓層的請求，直接將患者送到一樓，這樣可以減少患者的送醫時間，增加患者的存活率。<br></p>
 <p>7&#x2F;12 下午是熟悉環境，這時候我們又得之了一個壞消息，樹莓派只有4台，所以我們又馬上坐下來商討 PlanC，我們想既然樹莓派等於是一台效能低的電腦，那我們手上不就有一台效能高的電腦嗎，所以我們的 PlanC 就是，當我們沒有搶到樹莓派時我們就在電腦使用 Pyserial 來跟 Arduino 通訊，然後 OpenCV 也直接在電腦上運作。<br></p>
 <p>7&#x2F;13 開幕式後就開始比賽了，比到 7&#x2F;14 中午 12 點。比賽開始後我們果然沒有搶到樹莓派，所以我們直接採用 PlanC，那過程中可以說很不順利，由於昨天臨時計劃使用筆電當作主機，所以昨天在酒店臨時寫了程式碼，但到了比賽現場出現了很多 BUG 那我們的時間幾乎都在 deBUG。我們最後還是有把作品做出來，只是有很多 BUG，我們決定用演的，我設定了一個程序，只要照這這個程序走就不會錯。那到了評審環節，我們做的非常失敗，因為現場非常的吵，我的夥伴又有點生病，聲音發不出來，導致評審其實沒有聽到我們說什麼，雖然我們有把醫療功能演示出來，但我們沒有成功抓住評審的注意力，以至於我們最後只獲得優勝。那對於這樣的結果我只能說有點不甘心，因為我覺得我們的想法非常好，但因為我的表達能力沒有那麼好，導致我認為的好想法沒有受到關注。</p>
-<p><img src="/RayBlog/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.jpg" alt="圖片介紹"></p>
+<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.jpg" alt="圖片介紹"></p>
 <h2 id="比賽心得"><a href="#比賽心得" class="headerlink" title="比賽心得"></a>比賽心得</h2><p>雖然我們的作品沒有受到評審的青睞，但我覺得我還是收穫很多，我發現我對於“隨機應變”這個技能還掌握的不夠好，後來想想，其實我們靜下心來，將作品的外觀做好做漂亮然後再做一份漂亮的簡報介紹，這樣做的結果或許會比我在那邊鑽研一些小功能小 bug 來的划算，但我覺得這就是經驗，如果下次還有機會參加類似的比賽，我也許可以做得更好。未來我將帶這這個作品征戰 IEYI 發明展。</p>
 
     </div>
@@ -266,9 +266,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/RayBlog/tags/%E6%AF%94%E8%B3%BD/" rel="tag"># 比賽</a>
-              <a href="/RayBlog/tags/%E5%9C%8B%E9%9A%9B%E4%BA%A4%E6%B5%81/" rel="tag"># 國際交流</a>
-              <a href="/RayBlog/tags/%E5%89%B5%E5%AE%A2/" rel="tag"># 創客</a>
+              <a href="/tags/%E6%AF%94%E8%B3%BD/" rel="tag"># 比賽</a>
+              <a href="/tags/%E5%9C%8B%E9%9A%9B%E4%BA%A4%E6%B5%81/" rel="tag"># 國際交流</a>
+              <a href="/tags/%E5%89%B5%E5%AE%A2/" rel="tag"># 創客</a>
           </div>
 
         
@@ -277,11 +277,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/RayBlog/2024/05/11/%E6%89%93%E5%8D%A1%E7%B3%BB%E7%B5%B1%E4%BD%BF%E7%94%A8%E5%89%8D%E7%AB%AF%E9%A9%97%E8%AD%89/" rel="prev" title="ZeroDay ischool 澔學學習股份有限公司 打卡系統使用前端驗證">
+    <a href="/2024/05/11/%E6%89%93%E5%8D%A1%E7%B3%BB%E7%B5%B1%E4%BD%BF%E7%94%A8%E5%89%8D%E7%AB%AF%E9%A9%97%E8%AD%89/" rel="prev" title="ZeroDay ischool 澔學學習股份有限公司 打卡系統使用前端驗證">
       <i class="fa fa-chevron-left"></i> ZeroDay ischool 澔學學習股份有限公司 打卡系統使用前端驗證
     </a></div>
       <div class="post-nav-item">
-    <a href="/RayBlog/2024/09/01/%E7%94%B0%E9%87%8E%E8%AA%BF%E6%9F%A5-IxDA/" rel="next" title="田野調查-IxDA">
+    <a href="/2024/09/01/%E7%94%B0%E9%87%8E%E8%AA%BF%E6%9F%A5-IxDA/" rel="next" title="田野調查-IxDA">
       田野調查-IxDA <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -349,21 +349,21 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Ray"
-      src="/RayBlog/images/RayMe.jpeg">
+      src="/images/RayMe.jpeg">
   <p class="site-author-name" itemprop="name">Ray</p>
   <div class="site-description" itemprop="description">科技源於人性，而低谷終將迎來黎明</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/RayBlog/archives/">
+          <a href="/archives/">
         
           <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/RayBlog/tags/">
+            <a href="/tags/">
           
         <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">標籤</span></a>
@@ -375,7 +375,7 @@
         <a href="https://github.com/if-else-master" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;if-else-master" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/RayBlog/rayc57429@gmail.com" title="E-Mail → rayc57429@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="/rayc57429@gmail.com" title="E-Mail → rayc57429@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/rayc57429/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;rayc57429&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
@@ -493,36 +493,36 @@
 
   
   
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/RayBlog/lib/canvas-nest/canvas-nest.min.js"></script>
-  <script size="300" alpha="0.6" zIndex="-1" src="/RayBlog/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/RayBlog/lib/anime.min.js"></script>
-  <script src="/RayBlog/lib/velocity/velocity.min.js"></script>
-  <script src="/RayBlog/lib/velocity/velocity.ui.min.js"></script>
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/RayBlog/js/utils.js"></script>
+<script src="/js/utils.js"></script>
 
-<script src="/RayBlog/js/motion.js"></script>
-
-
-<script src="/RayBlog/js/schemes/muse.js"></script>
+<script src="/js/motion.js"></script>
 
 
-<script src="/RayBlog/js/next-boot.js"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
-  <script defer src="/RayBlog/lib/three/three.min.js"></script>
-    <script defer src="/RayBlog/lib/three/three-waves.min.js"></script>
-    <script defer src="/RayBlog/lib/three/canvas_lines.min.js"></script>
-    <script defer src="/RayBlog/lib/three/canvas_sphere.min.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  
-
-
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
-<script src="/RayBlog/js/local-search.js"></script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
