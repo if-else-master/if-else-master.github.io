@@ -6,5 +6,5 @@ Allow: /tags/
 Disallow: /vendors/
 Disallow: /fonts/
 Disallow: /fancybox/
-Sitemap: https://ifelsemaster.me/sitemap.xml
+Sitemap: https://if-else-master.github.io/sitemap.xml
 
