@@ -12,24 +12,26 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"if-else-master.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"ifelsemaster.org","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn","sidebar":"fadeIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="第九屆海峽兩岸青少年創客大賽     榮獲優勝   📋 前言這個比賽是類似 IEYI 發明展，不同的地方是他要現場做出來。我們這組做的東西是智能電梯，這個電梯的功能是透過影像辨識來偵測電梯內的人數。如果電梯客滿那就不會會應電梯外的請求指令，電梯會優先將電梯艙內的請求完成才會回應電梯外的搭乘請求。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第九屆海峽兩岸青少年創客大賽">
-<meta property="og:url" content="https://if-else-master.github.io/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/index.html">
+<meta property="og:url" content="https://ifelsemaster.org/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
 <meta property="og:description" content="第九屆海峽兩岸青少年創客大賽     榮獲優勝   📋 前言這個比賽是類似 IEYI 發明展，不同的地方是他要現場做出來。我們這組做的東西是智能電梯，這個電梯的功能是透過影像辨識來偵測電梯內的人數。如果電梯客滿那就不會會應電梯外的請求指令，電梯會優先將電梯艙內的請求完成才會回應電梯外的搭乘請求。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://if-else-master.github.io/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg">
-<meta property="og:image" content="https://if-else-master.github.io/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.jpg">
-<meta property="og:image" content="https://if-else-master.github.io/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.jpg">
+<meta property="og:image" content="https://ifelsemaster.org/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.webp">
+<meta property="og:image" content="https://ifelsemaster.org/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.webp">
+<meta property="og:image" content="https://ifelsemaster.org/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.webp">
 <meta property="article:published_time" content="2024-07-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-06-27T16:00:00.000Z">
 <meta property="article:author" content="Ray">
@@ -37,9 +39,9 @@
 <meta property="article:tag" content="國際交流">
 <meta property="article:tag" content="創客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://if-else-master.github.io/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg">
+<meta name="twitter:image" content="https://ifelsemaster.org/img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.webp">
 
-<link rel="canonical" href="https://if-else-master.github.io/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
+<link rel="canonical" href="https://ifelsemaster.org/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
 
 
 <script id="page-configurations">
@@ -86,7 +88,7 @@
 <style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -195,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://if-else-master.github.io/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
+    <link itemprop="mainEntityOfPage" href="https://ifelsemaster.org/2024/07/09/%E7%AC%AC%E4%B9%9D%E5%B1%86%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E9%9D%92%E5%B0%91%E5%B9%B4%E5%89%B5%E5%AE%A2%E5%A4%A7%E8%B3%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/RayMe.jpeg">
@@ -248,14 +250,14 @@
 <h2 id="關於比賽"><a href="#關於比賽" class="headerlink" title="關於比賽"></a>關於比賽</h2><p>自2015年時任海協會會長陳德銘考察Fablab臺北及同濟大學設計創意學院並提出創辦構想後，海峽兩岸青少年創客大賽正式啟動。首屆比賽於2016年舉行，截至2023年，已成功舉辦八屆，吸引了超過3300名青少年參與。</p>
 <p>海峽兩岸青少年創客大賽自2016年首辦以來，這項賽事由海峽兩岸關係協會指導，上海市台辦、同濟大學聯合主辦，同濟大學設計創意學院承辦，旨在通過創客活動促進青少年的交流與互動。</p>
 <p>比賽以「眾智未來」為核心主題，鼓勵參賽者以SDGs為導向，秉持世界公民的視野，關注社會、經濟與環境挑戰。參賽者結合創新設計理念與前沿科技，致力於創造兼具社會價值與產業潛力的作品，展現青年在創意與技術領域的卓越能力</p>
-<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.jpg" alt="圖片介紹"></p>
+<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/all.webp" alt="圖片介紹" width="800" height="533" loading="lazy" decoding="async"></p>
 <h2 id="發想過程"><a href="#發想過程" class="headerlink" title="發想過程"></a>發想過程</h2><p>這是一次創客大賽，那我們思來想去還是想不到要做什麼，那這時候我在一段Apple CEO Tim Cook的採訪中聽到這麼一段話，他說：所有的靈感都來自於生活中的”痛點“，人們因為習慣了這些痛點所以沒有去改變，而作為創作者作為科技屆的標竿，蘋果有義務解決這些痛點。這句話讓我開始思考我生活中有什麼痛點，最後真的讓我想到了，我們數位實驗高中的學習基地在四樓和五樓，每天上下課都會有很多人，那電梯在五樓的時候就客滿了，但是電梯還是在四樓就停下來，這如果是在這種六層樓的建築物那可能還好，如果是在那種30層樓的高樓裡，這些等待電梯開關門時間就被浪費了，不只體驗很差，如果我剛好要趕公車，心情就會很煩燥。所以這是我們想要解決的“痛點”。</p>
 <h2 id="準備過程"><a href="#準備過程" class="headerlink" title="準備過程"></a>準備過程</h2><p>這次的創客大賽規定要我們現場做出來，所以這邊的準備過程是先在學校做一次，現場才不會顯得很慌張。我們用Onshape 畫出電梯的外殼，並用雷射切割幾切出來，那在內部硬體方面，我們採用的方式是使用樹莓派5驅動步進馬達來做出電梯上下移動的效果。那至於我們要怎麼判斷電梯內有沒有客滿，我們決定採用影像辨識的方式，我們本來準備使用 YoLo5 nano 但我們發現會導致電梯客滿的元素不只是”人“，還有可能是輪椅、嬰兒車、推車…等，所以我們改用 OpenCV 的顏色辨識功能，我們將電梯艙的地板塗成紅色，讓 OpenCV 偵測看看有沒有紅色地板，如果偵測到紅色地板，代表電梯沒有客滿，如果沒有偵測到紅色地板，代表電梯客滿了。那以上就是我們整個作品的詳細功能以及製作方式。</p>
-<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.jpg" alt="圖片介紹"></p>
+<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_9570.webp" alt="圖片介紹" width="1179" height="657" loading="lazy" decoding="async"></p>
 <h2 id="決賽環節"><a href="#決賽環節" class="headerlink" title="決賽環節"></a>決賽環節</h2><p>我們 7&#x2F;11 去到上海，第一天我們就深感不秒，我們住的那間酒店的電梯就有相關的功能，在我們搭電梯下樓的時候，我們發現當電梯滿載的時候，電梯是不會停其他樓層的，電梯外的顯示器上會寫該電梯滿載中。那因為距離比賽還有一天半，我們緊急討論 PlanB，最後我們決定增加一個緊急醫療功能，這個功能是在電梯艙內增加一顆按鈕，當有人在高樓層昏倒需要送醫的時候，患者的家屬可以將患者抬進電梯並按下該按鈕，這時候電梯會忽視其他樓層的請求，直接將患者送到一樓，這樣可以減少患者的送醫時間，增加患者的存活率。<br></p>
 <p>7&#x2F;12 下午是熟悉環境，這時候我們又得之了一個壞消息，樹莓派只有4台，所以我們又馬上坐下來商討 PlanC，我們想既然樹莓派等於是一台效能低的電腦，那我們手上不就有一台效能高的電腦嗎，所以我們的 PlanC 就是，當我們沒有搶到樹莓派時我們就在電腦使用 Pyserial 來跟 Arduino 通訊，然後 OpenCV 也直接在電腦上運作。<br></p>
 <p>7&#x2F;13 開幕式後就開始比賽了，比到 7&#x2F;14 中午 12 點。比賽開始後我們果然沒有搶到樹莓派，所以我們直接採用 PlanC，那過程中可以說很不順利，由於昨天臨時計劃使用筆電當作主機，所以昨天在酒店臨時寫了程式碼，但到了比賽現場出現了很多 BUG 那我們的時間幾乎都在 deBUG。我們最後還是有把作品做出來，只是有很多 BUG，我們決定用演的，我設定了一個程序，只要照這這個程序走就不會錯。那到了評審環節，我們做的非常失敗，因為現場非常的吵，我的夥伴又有點生病，聲音發不出來，導致評審其實沒有聽到我們說什麼，雖然我們有把醫療功能演示出來，但我們沒有成功抓住評審的注意力，以至於我們最後只獲得優勝。那對於這樣的結果我只能說有點不甘心，因為我覺得我們的想法非常好，但因為我的表達能力沒有那麼好，導致我認為的好想法沒有受到關注。</p>
-<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.jpg" alt="圖片介紹"></p>
+<p><img src="/./img/%E6%B5%B7%E5%B3%BD%E5%85%A9%E5%B2%B8%E4%BA%A4%E6%B5%81/IMG_8258.webp" alt="圖片介紹" width="1179" height="789" loading="lazy" decoding="async"></p>
 <h2 id="比賽心得"><a href="#比賽心得" class="headerlink" title="比賽心得"></a>比賽心得</h2><p>雖然我們的作品沒有受到評審的青睞，但我覺得我還是收穫很多，我發現我對於“隨機應變”這個技能還掌握的不夠好，後來想想，其實我們靜下心來，將作品的外觀做好做漂亮然後再做一份漂亮的簡報介紹，這樣做的結果或許會比我在那邊鑽研一些小功能小 bug 來的划算，但我覺得這就是經驗，如果下次還有機會參加類似的比賽，我也許可以做得更好。未來我將帶這這個作品征戰 IEYI 發明展。</p>
 
     </div>
@@ -492,16 +494,9 @@
   </div>
 
   
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/muse.js"></script>

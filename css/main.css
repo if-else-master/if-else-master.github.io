@@ -1275,7 +1275,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4aa6ff;
+  background: #52ff54;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2941,4 +2941,14 @@ code {
 }
 blockquote {
   font-family: "LXGW WenKai TC", sans-serif;
+}
+.post-body img,
+.post-gallery img,
+img[width][height] {
+  height: auto;
+}
+@media (min-width: 992px) {
+  body {
+    padding-left: 320px;
+  }
 }
