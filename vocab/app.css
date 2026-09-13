@@ -1,0 +1,218 @@
+/* 單字文法補救站
+ *
+ * 全站的深色模式是 darkmode-js 疊一層 mix-blend-mode 濾鏡做的，會把底下的顏色
+ * 整個反轉。所以這裡一律照「淺色」設計，深色由那層自己處理，不要再自己寫一套
+ * 深色配色，否則兩層反轉會互相打架。
+ */
+
+#vocab-app {
+  --vb-line: #e3e6ea;
+  --vb-muted: #6b7280;
+  --vb-accent: #2563eb;
+  --vb-soft: #f5f7fa;
+  --vb-warn: #b45309;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+#vocab-app .vb-loading {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--vb-muted);
+}
+
+/* ── 摘要列 ───────────────────────────────── */
+.vb-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  background: var(--vb-soft);
+  border-radius: 12px;
+}
+.vb-stats b { font-size: 20px; }
+.vb-stats span { color: var(--vb-muted); font-size: 13px; }
+.vb-src { flex-basis: 100%; font-size: 12px; color: var(--vb-muted); }
+
+/* ── 控制列 ───────────────────────────────── */
+.vb-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.vb-controls input[type="search"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 14px;
+  border: 1px solid var(--vb-line);
+  border-radius: 8px;
+  background: #fff;
+}
+.vb-chip {
+  padding: 5px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #374151;
+  background: #fff;
+  border: 1px solid var(--vb-line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.vb-chip:hover { background: var(--vb-soft); }
+.vb-chip[aria-pressed="true"] {
+  color: #fff;
+  background: var(--vb-accent);
+  border-color: var(--vb-accent);
+}
+
+/* ── 字根區塊 ─────────────────────────────── */
+.vb-root { margin: 26px 0 0; }
+.vb-root-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--vb-accent);
+}
+.vb-root-form {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vb-accent);
+}
+.vb-root-mean { font-size: 17px; font-weight: 600; }
+.vb-root-origin { font-size: 12px; color: var(--vb-muted); }
+.vb-root-count { margin-left: auto; font-size: 12px; color: var(--vb-muted); }
+
+/* ── 單字卡 ───────────────────────────────── */
+.vb-word {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--vb-line);
+}
+.vb-word.is-playing { background: #eff6ff; box-shadow: 0 0 0 10px #eff6ff; border-radius: 4px; }
+
+.vb-w-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.vb-w { font-size: 19px; font-weight: 700; }
+.vb-pos { font-size: 12px; color: var(--vb-muted); font-style: italic; }
+.vb-lv {
+  padding: 1px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--vb-muted);
+  border-radius: 4px;
+}
+.vb-lv[data-lv="1"], .vb-lv[data-lv="2"] { background: #059669; }
+.vb-lv[data-lv="3"], .vb-lv[data-lv="4"] { background: #0284c7; }
+.vb-lv[data-lv="5"], .vb-lv[data-lv="6"] { background: #b91c1c; }
+.vb-zh { font-size: 15px; }
+
+.vb-play {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 13px;
+  color: var(--vb-accent);
+  background: #fff;
+  border: 1px solid var(--vb-line);
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.vb-play:hover { background: var(--vb-soft); }
+
+/* 字根拆解 */
+.vb-parts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: 8px 0 6px; }
+.vb-part {
+  padding: 2px 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  background: var(--vb-soft);
+  border: 1px solid var(--vb-line);
+  border-radius: 6px;
+}
+.vb-part i { font-style: normal; font-size: 11px; color: var(--vb-muted); }
+.vb-plus { color: var(--vb-muted); font-size: 12px; }
+.vb-gloss { font-size: 13px; color: var(--vb-muted); }
+
+/* 例句 */
+.vb-sent { margin: 8px 0 0; }
+.vb-en { font-size: 15px; }
+.vb-zhs { font-size: 13px; color: var(--vb-muted); }
+
+/* 文法點 */
+.vb-gram {
+  margin-top: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  border-radius: 0 6px 6px 0;
+}
+.vb-gram b { color: var(--vb-warn); }
+.vb-gnote { color: #57534e; }
+
+/* ── 睡前播放列（固定在底部）─────────────────── */
+.vb-player {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid var(--vb-line);
+  border-radius: 12px;
+  box-shadow: 0 -2px 14px rgba(0, 0, 0, .06);
+}
+.vb-player button {
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: #fff;
+  background: var(--vb-accent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.vb-player button.vb-ghost {
+  color: #374151;
+  background: #fff;
+  border: 1px solid var(--vb-line);
+}
+.vb-now { flex: 1 1 160px; min-width: 0; font-size: 13px; color: var(--vb-muted); }
+.vb-now b { color: #111827; }
+.vb-bar {
+  flex-basis: 100%;
+  height: 5px;
+  background: var(--vb-line);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.vb-bar-fill { height: 100%; width: 0; background: var(--vb-accent); border-radius: 3px; }
+.vb-player select {
+  padding: 6px 8px;
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid var(--vb-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.vb-empty { padding: 40px 0; text-align: center; color: var(--vb-muted); }
+
+@media (max-width: 567px) {
+  .vb-root-count { margin-left: 0; flex-basis: 100%; }
+  .vb-play { margin-left: 0; }
+}
