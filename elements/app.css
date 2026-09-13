@@ -1,0 +1,166 @@
+/* 元素週期表．單字版
+ *
+ * 配色說明：只用三色（金屬／類金屬／非金屬），不用常見的八分類。
+ * 週期表任兩個分類都可能在視覺上相鄰，八色在這種「全配對」情境下
+ * 無法通過辨色障礙的分離度門檻；三色實測全部通過（最差全配對
+ * CVD ΔE 9.2、常規視覺 ΔE 24.0）。細分類改用文字顯示在詳情區。
+ * 顏色只是輔助，每一格本來就有符號與中英文名，識別不依賴顏色。
+ *
+ * 注意：全站深色模式是 darkmode-js 疊一層濾鏡反轉顏色，這裡照淺色設計。
+ */
+
+#pt-app {
+  --pt-line: #e3e6ea;
+  --pt-muted: #6b7280;
+  --pt-ink: #1f2328;
+  --pt-accent: #2563eb;
+  --pt-soft: #f5f7fa;
+
+  /* 三分類：驗證過的分類色（light 模式，surface #fcfcfb） */
+  --pt-metal: #2a78d6;
+  --pt-metalloid: #eb6834;
+  --pt-nonmetal: #1baf7a;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#pt-app .pt-loading { padding: 60px 0; text-align: center; color: var(--pt-muted); }
+
+/* ── 頂部 ─────────────────────────────────── */
+.pt-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  background: var(--pt-soft);
+  border-radius: 12px;
+}
+.pt-head b { font-size: 20px; }
+.pt-head span { font-size: 13px; color: var(--pt-muted); }
+.pt-note { flex-basis: 100%; font-size: 12px; color: var(--pt-muted); }
+
+.pt-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.pt-tools input[type="search"] {
+  flex: 1 1 180px; min-width: 0;
+  padding: 7px 12px;
+  font: inherit; font-size: 14px;
+  border: 1px solid var(--pt-line); border-radius: 8px; background: #fff;
+}
+.pt-btn {
+  padding: 7px 14px;
+  font: inherit; font-size: 14px;
+  color: #fff; background: var(--pt-accent);
+  border: 0; border-radius: 8px; cursor: pointer;
+}
+.pt-btn.ghost { color: var(--pt-ink); background: #fff; border: 1px solid var(--pt-line); }
+
+/* 圖例兼篩選 */
+.pt-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.pt-leg {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px 4px 8px;
+  font-size: 13px; color: var(--pt-ink);
+  background: #fff;
+  border: 1px solid var(--pt-line); border-radius: 999px;
+  cursor: pointer;
+}
+.pt-leg i { width: 10px; height: 10px; border-radius: 3px; }
+.pt-leg[aria-pressed="true"] { border-color: var(--pt-ink); background: var(--pt-soft); }
+
+/* ── 週期表格線 ────────────────────────────── */
+/* 18 欄固定寬，窄螢幕靠容器橫向捲動，不壓縮格子 */
+/* 18 欄要塞進部落格的內容欄。欄寬用 1fr 讓它精準填滿而不是寫死像素，
+   內容欄寬度隨主題或側邊欄變動時才不會剛好切掉第 18 欄（惰性氣體那排）。
+   英文名在這個尺寸下放不下也讀不清，移到下方詳情區顯示。 */
+.pt-scroll { overflow-x: auto; padding-bottom: 8px; }
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.pt-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 52px;
+  padding: 2px 2px 2px 4px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--pt-line);
+  border-left-width: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform .08s, box-shadow .08s;
+}
+.pt-cell:hover { transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0, 0, 0, .12); }
+.pt-cell.is-playing { box-shadow: 0 0 0 3px var(--pt-accent); }
+.pt-cell.is-dim { opacity: .2; }
+
+.pt-cell[data-grp="metal"]     { border-left-color: var(--pt-metal);     background: #f2f7fd; }
+.pt-cell[data-grp="metalloid"] { border-left-color: var(--pt-metalloid); background: #fef5f1; }
+.pt-cell[data-grp="nonmetal"]  { border-left-color: var(--pt-nonmetal);  background: #f0faf6; }
+
+/* 文字一律用墨色，不用分類色 —— 識別靠文字，顏色只是輔助 */
+.pt-z   { font-size: 8px; color: var(--pt-muted); line-height: 1.1; }
+.pt-sym { font-size: 15px; font-weight: 700; color: var(--pt-ink); line-height: 1.1; }
+.pt-zh  { font-size: 11px; color: var(--pt-ink); line-height: 1.2; }
+.pt-en  { display: none; }   /* 格子放不下，改在詳情區顯示 */
+
+/* 鑭系錒系被抽掉之後留下的空位 */
+.pt-gap {
+  display: flex; align-items: center; justify-content: center;
+  height: 52px;
+  font-size: 9px; line-height: 1.2; text-align: center; color: var(--pt-muted);
+  background: repeating-linear-gradient(45deg, #f7f8f9, #f7f8f9 4px, transparent 4px, transparent 8px);
+  border: 1px dashed var(--pt-line); border-radius: 4px;
+}
+
+/* ── 詳情 ─────────────────────────────────── */
+.pt-detail {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  margin-top: 14px; padding: 14px 16px;
+  background: var(--pt-soft); border-radius: 12px;
+  min-height: 62px;
+}
+.pt-d-sym { font-size: 34px; font-weight: 700; line-height: 1; }
+.pt-d-main b { font-size: 19px; }
+.pt-d-main span { color: var(--pt-muted); font-size: 13px; }
+.pt-d-spell {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 15px; letter-spacing: .22em; color: var(--pt-ink);
+  word-break: break-all;
+}
+.pt-d-empty { color: var(--pt-muted); font-size: 14px; }
+
+/* ── 播放列 ───────────────────────────────── */
+.pt-player {
+  position: sticky; bottom: 0; z-index: 20;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin-top: 16px; padding: 12px 16px;
+  background: #fff; border: 1px solid var(--pt-line); border-radius: 12px;
+  box-shadow: 0 -2px 14px rgba(0, 0, 0, .06);
+}
+.pt-player select {
+  padding: 6px 8px; font: inherit; font-size: 13px;
+  border: 1px solid var(--pt-line); border-radius: 8px; background: #fff;
+}
+.pt-now { flex: 1 1 140px; min-width: 0; font-size: 13px; color: var(--pt-muted); }
+.pt-now b { color: var(--pt-ink); }
+.pt-bar { flex-basis: 100%; height: 5px; background: var(--pt-line); border-radius: 3px; cursor: pointer; }
+.pt-bar-fill { height: 100%; width: 0; background: var(--pt-accent); border-radius: 3px; }
+
+/* 窄螢幕維持 18 欄不重排（週期表的位置本身就是資訊，重排就失去意義），
+   改成固定欄寬讓 .pt-scroll 橫向捲動，不要把格子壓到看不見。 */
+@media (max-width: 767px) {
+  .pt-grid { grid-template-columns: repeat(18, 36px); }
+  .pt-cell, .pt-gap { height: 48px; }
+  .pt-sym { font-size: 13px; }
+  .pt-zh { font-size: 10px; }
+  .pt-z { font-size: 7px; }
+}
