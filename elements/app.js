@@ -18,7 +18,13 @@
   };
   var GROUP_NAME = { metal: '金屬', metalloid: '類金屬', nonmetal: '非金屬' };
 
-  var DATA = {}, OFFSETS = {}, audio = null, stopAt = null;
+  var DATA = {}, OFFSETS = {}, audio = null;
+  // 播放模式要明確分開。timeupdate 大約每 250ms 才觸發一次，單獨播放偵測到
+  // 越過終點時，currentTime 往往已經落進下一個元素的區間 —— 若這時還照
+  // currentTime 更新畫面，就會「聽完一個卻跳到下一個」。所以 single 模式下
+  // 完全不依音軌位置動畫面，只有 all（依序播放）才跟著走。
+  var mode = null;          // 'single' | 'all' | null
+  var stopAt = null;        // 只有 single 模式會設
   var els = {}, filterGrp = null, query = '';
 
   Promise.all([
@@ -129,10 +135,10 @@
     });
     els.playAll.addEventListener('click', function () {
       ensureAudio();
-      if (audio.paused) { stopAt = null; audio.play(); } else audio.pause();
+      if (audio.paused) { mode = 'all'; stopAt = null; audio.play(); } else audio.pause();
     });
     app.querySelector('#pt-restart').addEventListener('click', function () {
-      ensureAudio(); stopAt = null; audio.currentTime = 0; audio.play();
+      ensureAudio(); mode = 'all'; stopAt = null; audio.currentTime = 0; audio.play();
     });
     app.querySelector('#pt-rate').addEventListener('change', function () {
       ensureAudio(); audio.playbackRate = parseFloat(this.value);
@@ -144,6 +150,7 @@
       ensureAudio();
       var d = duration(); if (!d) return;
       var r = this.getBoundingClientRect();
+      mode = 'all';           // 拖曳進度條視為要連續聽下去
       stopAt = null;
       audio.currentTime = ((ev.clientX - r.left) / r.width) * d;
       audio.play();
@@ -202,32 +209,51 @@
     var o = OFFSETS[sym];
     if (!o) return;
     ensureAudio();
+    mode = 'single';
     stopAt = o.end;
     audio.currentTime = o.start;
     audio.play();
+    markCell(sym);
+    var e = find(sym);
+    els.now.innerHTML = '正在播放　<b>' + esc(e.sym) + '</b>　' + esc(e.zh) + ' ' + esc(e.en);
   }
 
   var lastCell = null;
+  // 高亮換到另一格時回傳那一格，沒換則回傳 null —— 讓呼叫端知道要不要
+  // 順便更新詳情與捲動（timeupdate 每秒約四次，不能每次都重寫 DOM）。
+  function markCell(sym) {
+    var cell = els.grid.querySelector('.pt-cell[data-sym="' + sym + '"]');
+    if (cell === lastCell) return null;
+    if (lastCell) lastCell.classList.remove('is-playing');
+    if (cell) cell.classList.add('is-playing');
+    lastCell = cell;
+    return cell;
+  }
+
   function tick() {
-    if (stopAt !== null && audio.currentTime >= stopAt) { audio.pause(); stopAt = null; }
     var d = duration();
     if (d) els.fill.style.width = (audio.currentTime / d * 100) + '%';
 
+    if (mode === 'single') {
+      // 到終點就停，而且不碰畫面 —— 高亮與詳情停在剛才點的那個元素，
+      // 不會因為 currentTime 已越界而跳到下一個。
+      if (stopAt !== null && audio.currentTime >= stopAt) {
+        audio.pause();
+        audio.currentTime = stopAt;   // 停在邊界，下次按依序播放才從下一個元素乾淨地開始
+        stopAt = null;
+      }
+      return;
+    }
+
+    // 依序播放：畫面跟著音軌走，但只在換元素的那一刻更新
     var cur = currentSym();
     if (!cur) return;
+    var cell = markCell(cur);
+    if (!cell) return;
     var e = find(cur);
     els.now.innerHTML = '正在播放　<b>' + esc(e.sym) + '</b>　' + esc(e.zh) + ' ' + esc(e.en);
-    var cell = els.grid.querySelector('.pt-cell[data-sym="' + cur + '"]');
-    if (cell === lastCell) return;
-    if (lastCell) lastCell.classList.remove('is-playing');
-    if (cell) {
-      cell.classList.add('is-playing');
-      if (stopAt === null) {
-        select(cur, false);   // 整軌播放時同步更新詳情
-        cell.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
-      }
-    }
-    lastCell = cell;
+    select(cur, false);
+    cell.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
   }
 
   function currentSym() {
